@@ -1,10 +1,12 @@
 @extends('layouts.master')
 
-@section('title', 'Form Volunteers')
+@section('title', 'Cadastro de Voluntários')
 
 @section('container')
 
-{!! Form::open(['route' => 'volunteer.send']) !!}
+<h1>Cadastro de Voluntários</h1>
+
+{!! Form::open(['route' => 'volunteer.store']) !!}
 
     <div class="form-group">
       {!! Form::label('name', 'Nome') !!}
@@ -24,5 +26,8 @@
     {!! Form::submit('Enviar', ['class' => 'btn btn-default']) !!}
     
 {!! Form::close() !!}
+
+<br />
+<a href="{{ route('volunteer.index') }}">Voltar para a Lista</a>
 
 @endsection
